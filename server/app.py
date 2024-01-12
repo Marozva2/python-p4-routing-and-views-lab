@@ -11,16 +11,16 @@ def index():
 @app.route('/print/<string:route>')
 def print_string(route):
     print(route)
-    return 'route'
+    return 'hello'
 
 @app.route('/count/<int:number>')
 def count(number):
-    count = f''
+    count = ''
     for n in range(number):
-        count += f'<p>{n}</p>'
+        count += f'{n}\n'
     return count
 
-@app.route('/math/<int:num1><string:operation><int:num2>')
+@app.route('/math/<int:num1>/<string:operation>/<int:num2>')
 def math(num1, num2, operation):
     if operation == '+':
         return str(num1 + num2)
